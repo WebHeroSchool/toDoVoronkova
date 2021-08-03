@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { count, length } from './numbers';
 
 const hello = 'Hello';
 const sum = 34 + 50;
@@ -15,6 +16,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <p>{`count * length = ${count * length}`}</p>
         <p style={{
           'color': 'green',
           'border': '1px solid #fff',
