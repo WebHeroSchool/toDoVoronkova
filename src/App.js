@@ -1,14 +1,13 @@
 import React from 'react';
-
-const ItemList = () => (<ul>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-</ul>);
+import TodoInput from './components/TodoInput/TodoInput';
+import TodoList from './components/TodoList/TodoList';
+import Footer from './components/Footer/Footer';
 
 const App = () => (<div>
-  Hello World!
-  <ItemList />
-</div>)
+  <h1>todos</h1>
+  <TodoInput />
+  <TodoList />
+  <Footer />
+</div>);
 
 export default App;
