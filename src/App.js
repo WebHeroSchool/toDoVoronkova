@@ -1,12 +1,18 @@
 import React from 'react';
 import TodoInput from './components/TodoInput/TodoInput';
-import { TodoList, tasks } from './components/TodoList/TodoList';
+import TodoList from './components/TodoList/TodoList';
 import Footer from './components/Footer/Footer';
+
+const tasks = {
+  'one': 'Помыть посуду',
+  'two': 'Погладить белье',
+  'three': 'Выгулять собаку'
+};
 
 const App = () => (<div>
   <h1>todos</h1>
   <TodoInput />
-  <TodoList props={tasks} />
+  <TodoList tasks={tasks} />
   <Footer count={3} />
 </div>);
 
