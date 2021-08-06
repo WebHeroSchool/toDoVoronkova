@@ -3,11 +3,9 @@ import TodoInput from './components/TodoInput/TodoInput';
 import TodoList from './components/TodoList/TodoList';
 import Footer from './components/Footer/Footer';
 
-const tasks = {
-  'one': 'Помыть посуду',
-  'two': 'Погладить белье',
-  'three': 'Выгулять собаку'
-};
+const tasks = [ { value: 'Помыть посуду' }, 
+                { value: 'Погладить белье' }, 
+                { value: 'Выгулять собаку' }];
 
 const App = () => (<div>
   <h1>todos</h1>
