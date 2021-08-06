@@ -1,18 +1,11 @@
 import React from 'react';
+import TodoItem from '../TodoItem/TodoItem';
 
-const TodoList = () => (<div>
-  <label htmlFor="1">
-    <input type="radio" id="1"></input>
-    Важная задача!
-  </label>
-  <label htmlFor="2">
-    <input type="radio" id="2"></input>
-    Важная задача!
-  </label>
-  <label htmlFor="3">
-    <input type="radio" id="3"></input>
-    Важная задача!
-  </label>
+
+const TodoList = ({ tasks }) => (<div>
+  <li><TodoItem text={ tasks.one } /></li>
+  <li><TodoItem text={ tasks.two } /></li>
+  <li><TodoItem text={ tasks.three } /></li>
 </div>);
 
 export default TodoList;

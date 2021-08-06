@@ -3,11 +3,17 @@ import TodoInput from './components/TodoInput/TodoInput';
 import TodoList from './components/TodoList/TodoList';
 import Footer from './components/Footer/Footer';
 
+const tasks = {
+  'one': 'Помыть посуду',
+  'two': 'Погладить белье',
+  'three': 'Выгулять собаку'
+};
+
 const App = () => (<div>
   <h1>todos</h1>
   <TodoInput />
-  <TodoList />
-  <Footer />
+  <TodoList tasks={tasks} />
+  <Footer count={3} />
 </div>);
 
 export default App;
