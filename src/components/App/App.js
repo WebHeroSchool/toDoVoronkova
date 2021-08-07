@@ -6,9 +6,19 @@ import TodoList from '..//TodoList/TodoList';
 import Footer from '../Footer/Footer';
 
 const App = () => {
-  const tasks = [ { value: 'Помыть посуду' }, 
-                  { value: 'Погладить белье' }, 
-                  { value: 'Выгулять собаку' }];
+  const tasks = [ 
+    { 
+      value: 'Помыть посуду',
+      isDone: true 
+    }, 
+    {
+      value: 'Погладить белье',
+      isDone: false
+    },
+    {
+      value: 'Выгулять собаку',
+      isDone: true
+    }];
 
 
   return (
