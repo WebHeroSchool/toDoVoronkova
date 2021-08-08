@@ -9,5 +9,4 @@ const TodoItem = ({ text, isDone }) => (<span className= {
   })
 }>{ text }</span>);
 
-
 export default TodoItem;
