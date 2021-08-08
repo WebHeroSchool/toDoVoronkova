@@ -20,7 +20,6 @@ const App = () => {
       isDone: true
     }];
 
-
   return (
   <div className={styles.content}>
     <h1 className={styles.title}>todos</h1>
