@@ -1,0 +1,41 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+  height: 15%;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.btnList {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: 100;
+  font-family: "Roboto", sans serif;
+  padding: 3px 5px;
+}
+
+.itemActive {
+  border: 1px solid #e7cfcf;
+  border-radius: 10px;
+}
+
+.clear {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: 100;
+  font-family: "Roboto", sans serif;
+}

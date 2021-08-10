@@ -1,13 +1,33 @@
-.content {
-  height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(205, 205, 205, 0.2);
+}
+
+.wrap {
+  height: 670px;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-family: "Roboto", sans-serif;
 }
 
 .title {
-  font-weight: normal;
-  font-size: 90px;
+  font-weight: 100;
+  font-size: 140px;
+  color: #e7cfcf;
+  text-shadow: 3px 2px 4px rgb(231, 207, 207, 0.73);
+}
+
+.content {
+  width: 67%;
+  height: 60%;
+  background: white;
+  box-shadow: 5px 6px 5px 1px rgba(205, 205, 205, 0.27);
 }

@@ -1,0 +1,38 @@
+.form {
+  position: relative;
+  height: 15%;
+}
+
+.input {
+  border: none;
+  border-bottom: 2px solid rgb(205, 205, 205);
+  width: 92%;
+  padding-left: 8%;
+  outline: none;
+  height: 100%;
+  opacity: 0.5;
+  font-size: 18px;
+}
+
+.input::placeholder {
+  position: absolute;
+  top: calc(50% - 15px);
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 100;
+  font-family: "Roboto", sans-serif;
+  color: rgb(205, 205, 205);
+  width: 100%;
+}
+
+.btn {
+  position: absolute;
+  right: 9px;
+  top: calc(50% - 27px);
+  background: #e7cfcf;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  padding: 0px 14px;
+  font-size: 48px;
+}

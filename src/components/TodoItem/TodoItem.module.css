@@ -1,8 +1,56 @@
 .item {
-  color: #000;
+  list-style-type: none;
+  height: 33%;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px solid;
 }
 
+.itemDone {
+  color: rgb(205, 205, 205, 0.5);
+  font-weight: 100;
+}
 
-.done {
-  color: #c4c4c4;
+.round {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 2%;
+  border: 1px solid;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.roundDone {
+  background: rgb(205, 205, 205, 0.5);
+  border: none;
+}
+
+.roundDone::after,
+.roundDone::before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 3px;
+  top: 15px;
+  left: 6px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+.roundDone::before {
+  top: 14px;
+  left: 10px;
+  width: 15px;
+  transform: rotate(-45deg);
+}
+
+.delete {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 3%;
 }
