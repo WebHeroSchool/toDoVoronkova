@@ -4,14 +4,14 @@
        url("./roboto_regular.woff") format("woff"),
        url("./roboto_regular.ttf") format("truetype"),
        url("./roboto_regular.eot") format("eot");
-       font-weight: normal;
+       font-weight: 400;
 }
 
 @font-face {
 font-family: "Roboto";
-src: url("./roboto_bold.woff2") format("woff2"),
-     url("./roboto_bold.woff") format("woff"),
-     url("./roboto_bold.ttf") format("truetype"),
-     url("./roboto_bold.eot") format("eot");
-     font-weight: bold;
+src: url("./roboto_thin.woff2") format("woff2"),
+     url("./roboto_thin.woff") format("woff"),
+     url("./roboto_thin.ttf") format("truetype"),
+     url("./roboto_thin.eot") format("eot");
+     font-weight: 100;
 }

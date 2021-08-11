@@ -1,14 +1,19 @@
-import React from 'react';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import React from "react";
+import styles from "./TodoInput.module.css";
 
-const TodoInput = () => (<div>
-      <TextField
-          id="standard-textarea"
-          placeholder="Введите задачу"
-          multiline
-        />
-        <Button color="primary">Добавить</Button>
-</div>);
+const TodoInput = () => (
+  <form className={styles.form}>
+    <input
+      type="text"
+      class={styles.input}
+      placeholder="What needs to be done?"
+    />
+        
+    {/* //кнопка будет появляться, когда что-то написали в форме */}
+    <button type="button" class={styles.btn}>
+      +
+    </button>
+  </form>
+);
 
 export default TodoInput;
