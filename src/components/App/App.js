@@ -12,14 +12,17 @@ class App extends React.Component {
       {
       value: "Помыть посуду",
       isDone: true,
+      id: 1
     },
     {
       value: "Погладить белье",
       isDone: false,
+      id: 2
     },
     {
       value: "Выгулять собаку",
       isDone: true,
+      id: 3
     }
     ],
 
@@ -37,9 +40,19 @@ class App extends React.Component {
         text: "Completed",
       },
     ]
-  };
+  }
 
-  onClickDone = (isDone) => console.log(isDone);
+  onClickDone = id => {
+    const newItemList = this.state.tasks.map(item => {
+      if(item.id === id) {
+        item.isDone = !item.isDone;
+      }
+      return item;
+    })
+
+    this.setState({tasks: newItemList})
+  } 
+
 
   render() {
     return (
@@ -54,6 +67,7 @@ class App extends React.Component {
     );
   }
 }
+
 
 
 export default App;
