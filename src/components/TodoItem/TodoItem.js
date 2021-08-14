@@ -3,7 +3,7 @@ import classnames from "classnames";
 import styles from "./TodoItem.module.css";
 import trash from "./trash.svg";
 
-const TodoItem = ({ text, isDone }) => (
+const TodoItem = ({ text, isDone, onClickDone }) => (
   <li
     className={classnames({
       [styles.item]: true,
@@ -15,6 +15,7 @@ const TodoItem = ({ text, isDone }) => (
         [styles.round]: true,
         [styles.roundDone]: isDone,
       })}
+      onClick={() => onClickDone(isDone)}
     ></span>
     {text}
     <img src={trash} alt="trash" className={styles.delete} />
