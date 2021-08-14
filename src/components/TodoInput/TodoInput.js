@@ -5,12 +5,12 @@ const TodoInput = () => (
   <form className={styles.form}>
     <input
       type="text"
-      class={styles.input}
+      className={styles.input}
       placeholder="What needs to be done?"
     />
 
     {/* //кнопка будет появляться, когда что-то написали в форме */}
-    <button type="button" class={styles.btn}>
+    <button type="button" className={styles.btn}>
       +
     </button>
   </form>
