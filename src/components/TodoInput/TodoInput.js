@@ -8,7 +8,6 @@ const TodoInput = () => (
       className={styles.input}
       placeholder="What needs to be done?"
     />
-
     {/* //кнопка будет появляться, когда что-то написали в форме */}
     <button type="button" className={styles.btn}>
       +
