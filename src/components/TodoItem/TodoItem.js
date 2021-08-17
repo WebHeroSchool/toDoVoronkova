@@ -3,7 +3,8 @@ import classnames from "classnames";
 import styles from "./TodoItem.module.css";
 import trash from "./trash.svg";
 
-const TodoItem = ({ text, isDone, onClickDone, id }) => (
+const TodoItem = ({ text, isDone, onClickDone, id,
+onClickDelete }) => (
   <li
     className={classnames({
       [styles.item]: true,
@@ -19,7 +20,7 @@ const TodoItem = ({ text, isDone, onClickDone, id }) => (
       onClick={() => onClickDone(id)}
     ></span>
     {text}
-    <img src={trash} alt="trash" className={styles.delete} />
+    <img src={trash} alt="trash" className={styles.delete} onClick={() => onClickDelete(id)} id={id} />
   </li>
 );
 
