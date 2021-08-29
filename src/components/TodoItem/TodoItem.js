@@ -25,7 +25,9 @@ const TodoItem = ({ text, isDone, onClickDone, id,
 );
 
 TodoItem.dafaultProps = {
-  isDone: false
+  id: Math.floor(Math.random() * (40 - 20) + 20),
+  text: 'Some kind of task'
 }
+console.log(TodoItem.dafaultProps.id);
 
 export default TodoItem;
