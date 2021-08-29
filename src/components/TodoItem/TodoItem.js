@@ -4,7 +4,7 @@ import styles from "./TodoItem.module.css";
 import trash from "./trash.svg";
 
 const TodoItem = ({ text, isDone, onClickDone, id,
-onClickDelete }) => (
+  onClickDelete }) => (
   <li
     className={classnames({
       [styles.item]: true,
