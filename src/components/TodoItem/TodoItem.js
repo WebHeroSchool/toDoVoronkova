@@ -24,4 +24,8 @@ const TodoItem = ({ text, isDone, onClickDone, id,
   </li>
 );
 
+TodoItem.dafaultProps = {
+  isDone: false
+}
+
 export default TodoItem;
