@@ -1,6 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import styles from "./Footer.module.css";
+import PropTypes from "prop-types";
 
 const Footer = ({ count, btn }) => (
   <footer className={styles.footer}>
@@ -26,6 +27,14 @@ const Footer = ({ count, btn }) => (
 
 Footer.defaultProps = {
   count: 0
+}
+
+Footer.propTypes = {
+  count: PropTypes.number,
+  btn: PropTypes.arrayOf(PropTypes.shape({
+    isActive: PropTypes.bool,
+    text: PropTypes.string
+  }))
 }
 
 export default Footer;

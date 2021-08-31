@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./TodoInput.module.css";
 import classnames from "classnames";
+import PropTypes from "prop-types";
 
 class TodoInput extends React.Component {
   state = {
@@ -55,6 +56,10 @@ class TodoInput extends React.Component {
       </form>
     )
   }
+}
+
+TodoInput.propTypes = {
+  onClickAdd: PropTypes.func
 }
 
 export default TodoInput;
