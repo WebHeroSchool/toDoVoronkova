@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 
 class TodoItem extends React.Component {
   componentDidMount() {
-    console.log('conponentDidMount');
+    this.timerId = setInterval(() => console.log('interval'), 1000);
   }
 
   componentDidUpdate() {
@@ -14,7 +14,7 @@ class TodoItem extends React.Component {
   }
 
   componentWillUnmount() {
-    console.log('componetnWillUnmount');
+    clearInterval(this.timerId);
   }
 
   render() {
