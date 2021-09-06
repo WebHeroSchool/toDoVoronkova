@@ -10,20 +10,20 @@ class App extends React.Component {
   state = {
     tasks: [
       {
-        value: "Помыть посуду",
-        isDone: true,
-        id: 1
-      },
-      {
-        value: "Погладить белье",
-        isDone: false,
-        id: 2
-      },
-      {
-        value: "Выгулять собаку",
-        isDone: true,
-        id: 3
-      }
+    value: "Помыть посуду",
+    isDone: true,
+    id: 1
+  },
+  {
+    value: "Погладить белье",
+    isDone: false,
+    id: 2
+  },
+  {
+    value: "Выгулять собаку",
+    isDone: true,
+    id: 3
+  }
     ],
 
     count: 3,
