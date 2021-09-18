@@ -1,13 +1,12 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import styles from "./App.module.css";
 import "./Fonts/Fonts.css";
 import TodoInput from "../TodoInput/TodoInput";
 import TodoList from "../TodoList/TodoList";
 import Footer from "../Footer/Footer";
 
-
-class App extends React.Component {
-  state = {
+const App = () => {
+  const initialState = {
     tasks: [
       {
     value: "Помыть посуду",
@@ -44,58 +43,64 @@ class App extends React.Component {
     ],
 
     countFooter: 1
-  }
+  };
 
-  onClickDone = id => {
-    const newItemList = this.state.tasks.map(item => {
+  const [tasks, setTasks] = useState(initialState.tasks);
+  const [countFooter, setCountFooter] = useState(initialState.countFooter);
+  const [count, setCount] = useState(initialState.count);
+
+  useEffect(() => {
+    console.log('componentDidMount');
+}, []);
+
+useEffect(() => {
+   console.log('componentDidUpdate');
+});
+
+  const onClickDone = id => {
+    const newItemList = tasks.map(item => {
       if (item.id === id) {
         item.isDone = !item.isDone;
       }
       return item;
     })
+    setTasks(newItemList);
+    setCountFooter(newItemList.filter(item => !item.isDone).length);
+  };
 
-    this.setState({
-      tasks: newItemList,
-      countFooter: newItemList.filter(item => !item.isDone).length
-    });
-  }
+  const onClickDelete = id => {
+    const newTasks = tasks.filter(item => item.id !== id);
 
-  onClickDelete = id => {
-    const newTasks = this.state.tasks.filter(item => item.id !== id);
+    setTasks(newTasks);
+    setCountFooter(newTasks.filter(item => !item.isDone).length);
+  };
 
-    this.setState({
-      tasks: newTasks,
-      countFooter: newTasks.filter(item => !item.isDone).length
-    });
-  }
+  const onClickAdd = value => {
+    const newTasks = [
+        ...tasks,
+  
+        {
+          value,
+          isDone: false,
+          id: count + 1
+        }
+    ];
 
-  onClickAdd = value => this.setState(state => ({
-    tasks: [
-      ...state.tasks,
+    setTasks(newTasks);
+    setCount(count + 1);
+    setCountFooter((countFooter) => countFooter + 1);
+  };
 
-      {
-        value,
-        isDone: false,
-        id: state.count + 1
-      }
-    ],
-
-    count: state.count + 1,
-    countFooter: state.countFooter + 1
-  }))
-
-  render() {
     return (
       <div className={styles.wrap}>
         <h1 className={styles.title}>todos</h1>
         <div className={styles.content}>
-          <TodoInput onClickAdd={this.onClickAdd} />
-          <TodoList tasks={this.state.tasks} onClickDone={this.onClickDone} onClickDelete={this.onClickDelete} />
-          <Footer count={this.state.countFooter} btn={this.state.valueFooter} />
+          <TodoInput onClickAdd={onClickAdd} />
+          <TodoList tasks={tasks} onClickDone={onClickDone} onClickDelete={onClickDelete} />
+          <Footer count={countFooter} btn={initialState.valueFooter} />
         </div>
       </div>
     );
-  }
 }
 
 
