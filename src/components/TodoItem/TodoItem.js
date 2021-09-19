@@ -5,18 +5,6 @@ import trash from "./trash.svg";
 import PropTypes from "prop-types";
 
 class TodoItem extends React.Component {
-  componentDidMount() {
-    this.timerId = setInterval(() => console.log('interval'), 1000);
-  }
-
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.timerId);
-  }
-
   render() {
     const { text, isDone, onClickDone, id, onClickDelete } = this.props;
 
