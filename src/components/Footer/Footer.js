@@ -3,7 +3,7 @@ import classnames from "classnames";
 import styles from "./Footer.module.css";
 import PropTypes from "prop-types";
 
-const Footer = ({ count, btn }) => (
+const Footer = ({ count, btn, onClick, onClickClear }) => (
   <footer className={styles.footer}>
     <p className={styles.title}>{count} item left</p>
     <div className={styles.btnList}>
@@ -15,13 +15,14 @@ const Footer = ({ count, btn }) => (
               [styles.item]: true,
               [styles.itemActive]: item.isActive,
             })}
+            onClick={() => onClick(item.text)}
           >
             {item.text}
           </button>
         );
       })}
     </div>
-    <button className={styles.clear}>Clear completed</button>
+    <button className={styles.clear} onClick={() => onClickClear()}>Clear completed</button>
   </footer>
 );
 

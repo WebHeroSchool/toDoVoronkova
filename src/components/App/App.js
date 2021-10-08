@@ -18,7 +18,7 @@ const App = () => {
             <Link to='/contacts' className={styles.link}>Contacts</Link>
           </nav>
           <div className={styles.sidebar}>
-            <Route path='/' exact component={AboutMe} className={styles.aboutMe}/>
+            <Route path='/' exact component={AboutMe} />
             <Route path='/todo' component={Todo} />
             <Route path='/contacts' component={Contacts} />
           </div>
@@ -27,7 +27,5 @@ const App = () => {
     </Router>
   );
 }
-
-
 
 export default App;
