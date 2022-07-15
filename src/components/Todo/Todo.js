@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../App/App.module.css";
 import "../App/Fonts/Fonts.css";
 import TodoInput from "../TodoInput/TodoInput";
@@ -48,6 +48,7 @@ const Todo = () => {
     const [tasks, setTasks] = useState(initialState.tasks);
     const [countFooter, setCountFooter] = useState(initialState.countFooter);
     const [count, setCount] = useState(initialState.count);
+    const [valueFooter, setValueFooter] = useState(initialState.valueFooter);
 
     useEffect(() => {
         console.log('componentDidMount');
@@ -91,11 +92,46 @@ const Todo = () => {
         setCountFooter((countFooter) => countFooter + 1);
     };
 
+    const onClickFilter = key => {
+        const tasksList = [...document.querySelectorAll('li')];
+        tasksList.forEach(item => item.style.display = '');
+        changeStateFooterBtn(key);
+
+        switch (key) {
+            case 'Active':
+                tasksList.filter(item => item.classList.length === 2).forEach(item => item.style.display = 'none');
+                break;
+            case 'Completed':
+                tasksList.filter(item => item.classList.length === 1).forEach(item => item.style.display = 'none');
+                break;
+            default:
+                break;
+        }
+    };
+
+    const changeStateFooterBtn = (key) => {
+        const newValueFooter = valueFooter.map(item => {
+            if (item.text === key) {
+                item.isActive = true;
+            } else {
+                item.isActive = false;
+            }
+            return item;
+        });
+
+        setValueFooter(newValueFooter);
+    };
+
+    const onClickClear = () => {
+        const newTasks = tasks.filter(item => !item.isDone);
+        setTasks(newTasks);
+    };
+
     return (
         <div className={styles.item}>
             <TodoInput onClickAdd={onClickAdd} />
             <TodoList tasks={tasks} onClickDone={onClickDone} onClickDelete={onClickDelete} />
-            <Footer count={countFooter} btn={initialState.valueFooter} />
+            <Footer count={countFooter} btn={valueFooter} onClick={onClickFilter} onClickClear={onClickClear}/>
         </div>
     )
 }

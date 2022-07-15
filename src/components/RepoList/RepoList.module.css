@@ -1,0 +1,25 @@
+.wrap {
+    background: #fff;
+    border-radius: 10px;
+    height: 52%;
+    padding: 15px;
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+.list {
+    padding-left: 24px;
+}
+
+.item {
+    text-decoration: none;
+    color: #000;
+    transition: opacity .5s;
+    opacity: 1;
+}
+
+.item:hover {
+    opacity: .4;
+}
